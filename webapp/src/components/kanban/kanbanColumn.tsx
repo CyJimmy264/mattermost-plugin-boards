@@ -10,6 +10,7 @@ import './kanbanColumn.scss'
 type Props = {
     onDrop: (card: Card) => void
     children: React.ReactNode
+    collapsed?: boolean
 }
 
 const KanbanColumn = (props: Props) => {
@@ -28,6 +29,9 @@ const KanbanColumn = (props: Props) => {
     let className = 'octo-board-column'
     if (isOver) {
         className += ' dragover'
+    }
+    if (props.collapsed) {
+        className += ' collapsed'
     }
     return (
         <div

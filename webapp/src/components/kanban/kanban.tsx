@@ -21,8 +21,10 @@ import {Constants, Permission} from '../../constants'
 import {dragAndDropRearrange} from '../cardDetail/cardDetailContentsUtility'
 
 import {getCurrentBoardTemplates} from '../../store/cards'
+import {getMe} from '../../store/users'
 import BoardPermissionGate from '../permissions/boardPermissionGate'
 import HiddenCardCount from '../../components/hiddenCardCount/hiddenCardCount'
+import {UserSettings} from '../../userSettings'
 
 import KanbanCard from './kanbanCard'
 import KanbanColumn from './kanbanColumn'
@@ -55,8 +57,15 @@ const vStrength = createVerticalStrength(Utils.isMobile() ? 60 : 250)
 
 const Kanban = (props: Props) => {
     const cardTemplates: Card[] = useAppSelector(getCurrentBoardTemplates)
+    const currentUser = useAppSelector(getMe)
     const {board, activeView, cards, groupByProperty, visibleGroups, hiddenGroups, hiddenCardsCount} = props
+    const currentUserId = currentUser?.id || 'anonymous'
+    const [collapsedOptionIds, setCollapsedOptionIds] = useState(() => UserSettings.getKanbanCollapsedOptionIds(currentUserId, board.id, activeView.id))
     const [defaultTemplateID, setDefaultTemplateID] = useState<string>()
+
+    useEffect(() => {
+        setCollapsedOptionIds(UserSettings.getKanbanCollapsedOptionIds(currentUserId, board.id, activeView.id))
+    }, [activeView.id, board.id, currentUserId])
 
     useEffect(() => {
         if (activeView.fields.defaultTemplateId) {
@@ -92,6 +101,23 @@ const Kanban = (props: Props) => {
 
         await mutator.insertPropertyOption(board.id, board.cardProperties, groupByProperty!, option, 'add group')
     }, [board, groupByProperty])
+
+    const toggleColumnCollapsed = useCallback((columnId: string) => {
+        if (!columnId) {
+            return
+        }
+
+        const newCollapsedOptionIds = collapsedOptionIds.slice()
+        const index = newCollapsedOptionIds.indexOf(columnId)
+        if (index > -1) {
+            newCollapsedOptionIds.splice(index, 1)
+        } else {
+            newCollapsedOptionIds.push(columnId)
+        }
+
+        setCollapsedOptionIds(newCollapsedOptionIds)
+        UserSettings.setKanbanCollapsedOptionIds(currentUserId, board.id, activeView.id, newCollapsedOptionIds)
+    }, [activeView.id, board.id, collapsedOptionIds, currentUserId])
 
     const orderAfterMoveToColumn = useCallback((cardIds: string[], columnId?: string): string[] => {
         let cardOrder = activeView.fields.cardOrder.slice()
@@ -143,6 +169,10 @@ const Kanban = (props: Props) => {
             const visibleOptionIds = visibleGroups.map((o) => o.option.id)
             const srcBlockX = visibleOptionIds.indexOf(option.id)
             const dstBlockX = visibleOptionIds.indexOf(dstOption.id)
+
+            if (srcBlockX < 0 || dstBlockX < 0 || srcBlockX === dstBlockX) {
+                return
+            }
 
             // Here aboveRow means to the left while belowRow means to the right
             const moveTo = (srcBlockX > dstBlockX ? 'aboveRow' : 'belowRow') as Position
@@ -241,6 +271,8 @@ const Kanban = (props: Props) => {
                         readonly={props.readonly}
                         propertyNameChanged={propertyNameChanged}
                         onDropToColumn={onDropToColumn}
+                        collapsed={collapsedOptionIds.includes(group.option.id)}
+                        onToggleCollapsed={toggleColumnCollapsed}
                         calculationMenuOpen={showCalculationsMenu.get(group.option.id) || false}
                         onCalculationMenuOpen={() => toggleOptions(group.option.id, true)}
                         onCalculationMenuClose={() => toggleOptions(group.option.id, false)}
@@ -285,6 +317,7 @@ const Kanban = (props: Props) => {
                 {visibleGroups.map((group) => (
                     <KanbanColumn
                         key={group.option.id || 'empty'}
+                        collapsed={collapsedOptionIds.includes(group.option.id)}
                         onDrop={(card: Card) => onDropToColumn(group.option, card)}
                     >
                         {group.cards.map((card) => (

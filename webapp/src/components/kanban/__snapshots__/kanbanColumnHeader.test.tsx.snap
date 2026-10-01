@@ -7,17 +7,31 @@ exports[`src/components/kanban/kanbanColumnHeader return kanbanColumnHeader and 
     draggable="true"
     style="opacity: 1;"
   >
-    <span
-      class="Label propColorDefault "
+    <button
+      aria-label="Collapse column"
+      class="IconButton KanbanColumnHeader-collapse "
+      title="Collapse column"
+      type="button"
     >
-      <input
-        class="Editable "
-        placeholder="New Select"
-        spellcheck="true"
-        title="Title"
-        value="Title"
+      <i
+        class="CompassIcon icon-menu-right"
       />
-    </span>
+    </button>
+    <div
+      class="KanbanColumnHeader-title"
+    >
+      <span
+        class="Label propColorDefault "
+      >
+        <input
+          class="Editable "
+          placeholder="New Select"
+          spellcheck="true"
+          title="Title"
+          value="Title"
+        />
+      </span>
+    </div>
     <div
       class="KanbanCalculation"
     >
@@ -352,17 +366,31 @@ exports[`src/components/kanban/kanbanColumnHeader return kanbanColumnHeader and 
     draggable="true"
     style="opacity: 1;"
   >
-    <span
-      class="Label propColorDefault "
+    <button
+      aria-label="Collapse column"
+      class="IconButton KanbanColumnHeader-collapse "
+      title="Collapse column"
+      type="button"
     >
-      <input
-        class="Editable "
-        placeholder="New Select"
-        spellcheck="true"
-        title="New Title"
-        value="New Title"
+      <i
+        class="CompassIcon icon-menu-right"
       />
-    </span>
+    </button>
+    <div
+      class="KanbanColumnHeader-title"
+    >
+      <span
+        class="Label propColorDefault "
+      >
+        <input
+          class="Editable "
+          placeholder="New Select"
+          spellcheck="true"
+          title="New Title"
+          value="New Title"
+        />
+      </span>
+    </div>
     <div
       class="KanbanCalculation"
     >
@@ -412,17 +440,31 @@ exports[`src/components/kanban/kanbanColumnHeader should match snapshot 1`] = `
     draggable="true"
     style="opacity: 1;"
   >
-    <span
-      class="Label propColorDefault "
+    <button
+      aria-label="Collapse column"
+      class="IconButton KanbanColumnHeader-collapse "
+      title="Collapse column"
+      type="button"
     >
-      <input
-        class="Editable "
-        placeholder="New Select"
-        spellcheck="true"
-        title="Title"
-        value="Title"
+      <i
+        class="CompassIcon icon-menu-right"
       />
-    </span>
+    </button>
+    <div
+      class="KanbanColumnHeader-title"
+    >
+      <span
+        class="Label propColorDefault "
+      >
+        <input
+          class="Editable "
+          placeholder="New Select"
+          spellcheck="true"
+          title="Title"
+          value="Title"
+        />
+      </span>
+    </div>
     <div
       class="KanbanCalculation"
     >
@@ -472,18 +514,32 @@ exports[`src/components/kanban/kanbanColumnHeader should match snapshot readonly
     draggable="true"
     style="opacity: 1;"
   >
-    <span
-      class="Label propColorDefault "
+    <button
+      aria-label="Collapse column"
+      class="IconButton KanbanColumnHeader-collapse readonly"
+      title="Collapse column"
+      type="button"
     >
-      <input
-        class="Editable readonly "
-        placeholder="New Select"
-        readonly=""
-        spellcheck="true"
-        title="Title"
-        value="Title"
+      <i
+        class="CompassIcon icon-menu-right"
       />
-    </span>
+    </button>
+    <div
+      class="KanbanColumnHeader-title"
+    >
+      <span
+        class="Label propColorDefault "
+      >
+        <input
+          class="Editable readonly "
+          placeholder="New Select"
+          readonly=""
+          spellcheck="true"
+          title="Title"
+          value="Title"
+        />
+      </span>
+    </div>
     <div
       class="KanbanCalculation"
     >

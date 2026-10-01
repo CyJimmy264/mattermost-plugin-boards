@@ -16,6 +16,7 @@ export enum UserSettingKey {
     EmojiMartLast = 'emoji-mart.last',
     EmojiMartFrequently = 'emoji-mart.frequently',
     RandomIcons = 'randomIcons',
+    KanbanCollapsedColumns = 'kanbanCollapsedColumns',
     MobileWarningClosed = 'mobileWarningClosed',
     WelcomePageViewed = 'welcomePageViewed',
     NameFormat = 'nameFormat'
@@ -126,6 +127,41 @@ export class UserSettings {
 
     static set prefillRandomIcons(newValue: boolean) {
         UserSettings.set(UserSettingKey.RandomIcons, JSON.stringify(newValue))
+    }
+
+    static getKanbanCollapsedOptionIds(userId: string, boardId: string, viewId: string): string[] {
+        const rawData = UserSettings.get(UserSettingKey.KanbanCollapsedColumns)
+        if (!rawData) {
+            return []
+        }
+
+        try {
+            const collapsedColumns = JSON.parse(rawData) as Record<string, string[]>
+            const key = `${userId}:${boardId}:${viewId}`
+            return Array.isArray(collapsedColumns[key]) ? collapsedColumns[key] : []
+        } catch {
+            return []
+        }
+    }
+
+    static setKanbanCollapsedOptionIds(userId: string, boardId: string, viewId: string, optionIds: string[]): void {
+        const rawData = UserSettings.get(UserSettingKey.KanbanCollapsedColumns)
+        let collapsedColumns: Record<string, string[]> = {}
+        if (rawData) {
+            try {
+                collapsedColumns = JSON.parse(rawData)
+            } catch {
+                collapsedColumns = {}
+            }
+        }
+
+        const key = `${userId}:${boardId}:${viewId}`
+        if (optionIds.length === 0) {
+            delete collapsedColumns[key]
+        } else {
+            collapsedColumns[key] = optionIds
+        }
+        UserSettings.set(UserSettingKey.KanbanCollapsedColumns, JSON.stringify(collapsedColumns))
     }
 
     static getEmojiMartSetting(key: string): any {
