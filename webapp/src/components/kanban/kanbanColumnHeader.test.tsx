@@ -99,6 +99,65 @@ describe('src/components/kanban/kanbanColumnHeader', () => {
         ))
         expect(container).toMatchSnapshot()
     })
+    test('toggle column collapse', () => {
+        const onToggleCollapsed = jest.fn()
+        render(wrapDNDIntl(
+            <ReduxProvider store={store}>
+                <KanbanColumnHeader
+                    board={board}
+                    activeView={activeView}
+                    group={{
+                        option,
+                        cards: [card],
+                    }}
+                    intl={intl}
+                    readonly={false}
+                    addCard={jest.fn()}
+                    propertyNameChanged={jest.fn()}
+                    onDropToColumn={jest.fn()}
+                    collapsed={false}
+                    onToggleCollapsed={onToggleCollapsed}
+                    calculationMenuOpen={false}
+                    onCalculationMenuOpen={jest.fn()}
+                    onCalculationMenuClose={jest.fn()}
+                />
+            </ReduxProvider>,
+        ))
+
+        userEvent.click(screen.getByRole('button', {name: 'Collapse column'}))
+        expect(onToggleCollapsed).toBeCalledWith(option.id)
+    })
+    test('render collapsed column and allow it to be expanded', () => {
+        const onToggleCollapsed = jest.fn()
+        const {container} = render(wrapDNDIntl(
+            <ReduxProvider store={store}>
+                <KanbanColumnHeader
+                    board={board}
+                    activeView={activeView}
+                    group={{
+                        option,
+                        cards: [card],
+                    }}
+                    intl={intl}
+                    readonly={false}
+                    addCard={jest.fn()}
+                    propertyNameChanged={jest.fn()}
+                    onDropToColumn={jest.fn()}
+                    collapsed={true}
+                    onToggleCollapsed={onToggleCollapsed}
+                    calculationMenuOpen={false}
+                    onCalculationMenuOpen={jest.fn()}
+                    onCalculationMenuClose={jest.fn()}
+                />
+            </ReduxProvider>,
+        ))
+
+        expect(container.querySelector('.KanbanColumnHeader.collapsed')).toBeDefined()
+        expect(screen.getByRole('button', {name: 'Expand column'})).toBeDefined()
+        expect(screen.queryByRole('textbox')).toBeNull()
+        userEvent.click(screen.getByRole('button', {name: 'Expand column'}))
+        expect(onToggleCollapsed).toBeCalledWith(option.id)
+    })
     test('return kanbanColumnHeader and edit title', () => {
         const mockedPropertyNameChanged = jest.fn()
         const {container} = render(wrapDNDIntl(

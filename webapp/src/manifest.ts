@@ -9,13 +9,13 @@
 const manifest = JSON.parse(`
 {
     "id": "focalboard",
-    "name": "Mattermost Boards",
-    "description": "The Mattermost Boards plugin",
+    "name": "Mattermost Boards (Modified)",
+    "description": "Modified Mattermost Boards plugin with Kanban column reordering and personal column collapsing.",
     "homepage_url": "https://github.com/mattermost/mattermost-plugin-boards",
     "support_url": "https://github.com/mattermost/mattermost-plugin-boards/issues",
-    "release_notes_url": "https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2",
+    "release_notes_url": "https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.4.0",
     "icon_path": "assets/starter-template-icon.svg",
-    "version": "0.0.0",
+    "version": "9.4.1-modified.3",
     "min_server_version": "11.9.0",
     "server": {
         "executables": {

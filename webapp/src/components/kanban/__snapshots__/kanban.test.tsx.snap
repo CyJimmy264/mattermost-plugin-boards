@@ -20,17 +20,30 @@ exports[`src/component/kanban/kanban return kanban and change title on KanbanCol
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorOrange "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="New Q1"
-            value="New Q1"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorOrange "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="New Q1"
+              value="New Q1"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -72,17 +85,30 @@ exports[`src/component/kanban/kanban return kanban and change title on KanbanCol
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorBlue "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="Q2"
-            value="Q2"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorBlue "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="Q2"
+              value="Q2"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -306,17 +332,30 @@ exports[`src/component/kanban/kanban return kanban and click on KanbanCalculatio
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorOrange "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="Q1"
-            value="Q1"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorOrange "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="Q1"
+              value="Q1"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -519,17 +558,30 @@ exports[`src/component/kanban/kanban return kanban and click on KanbanCalculatio
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorBlue "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="Q2"
-            value="Q2"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorBlue "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="Q2"
+              value="Q2"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -753,17 +805,30 @@ exports[`src/component/kanban/kanban should match snapshot 1`] = `
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorOrange "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="Q1"
-            value="Q1"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorOrange "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="Q1"
+              value="Q1"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -805,17 +870,30 @@ exports[`src/component/kanban/kanban should match snapshot 1`] = `
         draggable="true"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorBlue "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable "
-            placeholder="New Select"
-            spellcheck="true"
-            title="Q2"
-            value="Q2"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorBlue "
+          >
+            <input
+              class="Editable "
+              placeholder="New Select"
+              spellcheck="true"
+              title="Q2"
+              value="Q2"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -1039,18 +1117,31 @@ exports[`src/component/kanban/kanban should match snapshot without permissions 1
         draggable="false"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorOrange "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable readonly "
-            placeholder="New Select"
-            readonly=""
-            spellcheck="true"
-            title="Q1"
-            value="Q1"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorOrange "
+          >
+            <input
+              class="Editable readonly "
+              placeholder="New Select"
+              readonly=""
+              spellcheck="true"
+              title="Q1"
+              value="Q1"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >
@@ -1072,18 +1163,31 @@ exports[`src/component/kanban/kanban should match snapshot without permissions 1
         draggable="false"
         style="opacity: 1;"
       >
-        <span
-          class="Label propColorBlue "
+        <button
+          aria-label="Collapse column"
+          title="Collapse column"
+          type="button"
         >
-          <input
-            class="Editable readonly "
-            placeholder="New Select"
-            readonly=""
-            spellcheck="true"
-            title="Q2"
-            value="Q2"
+          <i
+            class="CompassIcon icon-menu-right"
           />
-        </span>
+        </button>
+        <div
+          class="KanbanColumnHeader-title"
+        >
+          <span
+            class="Label propColorBlue "
+          >
+            <input
+              class="Editable readonly "
+              placeholder="New Select"
+              readonly=""
+              spellcheck="true"
+              title="Q2"
+              value="Q2"
+            />
+          </span>
+        </div>
         <div
           class="KanbanCalculation"
         >

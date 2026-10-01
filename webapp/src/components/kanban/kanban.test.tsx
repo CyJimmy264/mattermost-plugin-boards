@@ -15,6 +15,7 @@ import {TestBlockFactory} from '../../test/testBlockFactory'
 import {mockDOM, mockStateStore, wrapDNDIntl} from '../../testUtils'
 import {Utils} from '../../utils'
 import {mutator} from '../../mutator'
+import {UserSettings} from '../../userSettings'
 
 import Kanban from './kanban'
 
@@ -107,6 +108,9 @@ describe('src/component/kanban/kanban', () => {
         mockDOM()
     })
     beforeEach(jest.resetAllMocks)
+    afterEach(() => {
+        UserSettings.setKanbanCollapsedOptionIds('user_id_1', board.id, activeView.id, [])
+    })
     test('should match snapshot', () => {
         const {container} = render(wrapDNDIntl(
             <ReduxProvider store={store}>
@@ -401,6 +405,46 @@ describe('src/component/kanban/kanban', () => {
         expect(allButtonsNew).not.toBeNull()
         userEvent.click(allButtonsNew[0])
         expect(mockedAddCard).toBeCalledTimes(1)
+    })
+
+    test('return kanban and collapse a column', () => {
+        const {container} = render(wrapDNDIntl(
+            <ReduxProvider store={store}>
+                <Kanban
+                    board={board}
+                    activeView={activeView}
+                    cards={[card1, card2]}
+                    groupByProperty={groupProperty}
+                    visibleGroups={[
+                        {
+                            option: optionQ1,
+                            cards: [card1, card2],
+                        }, {
+                            option: optionQ2,
+                            cards: [card3],
+                        },
+                    ]}
+                    hiddenGroups={[
+                        {
+                            option: optionQ3,
+                            cards: [],
+                        },
+                    ]}
+                    selectedCardIds={[]}
+                    readonly={false}
+                    onCardClicked={jest.fn()}
+                    addCard={jest.fn()}
+                    addCardFromTemplate={jest.fn()}
+                    showCard={jest.fn()}
+                    hiddenCardsCount={0}
+                    showHiddenCardCountNotification={jest.fn()}
+                />
+            </ReduxProvider>,
+        ), {wrapper: MemoryRouter})
+
+        userEvent.click(screen.getAllByRole('button', {name: 'Collapse column'})[0])
+        expect(UserSettings.getKanbanCollapsedOptionIds('user_id_1', board.id, activeView.id)).toEqual([optionQ1.id])
+        expect(container.querySelectorAll('.octo-board-column.collapsed')).toHaveLength(1)
     })
 
     test('return kanban and click on KanbanCalculationMenu', () => {

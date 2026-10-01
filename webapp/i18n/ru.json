@@ -11,6 +11,7 @@
   "AttachmentElement.download": "Скачать",
   "AttachmentElement.upload-percentage": "Загрузка...({uploadPercent}%)",
   "BoardComponent.add-a-group": "+ Добавить группу",
+  "BoardComponent.card-count": "Количество карточек",
   "BoardComponent.delete": "Удалить",
   "BoardComponent.hidden-columns": "Скрытые столбцы",
   "BoardComponent.hide": "Скрыть",

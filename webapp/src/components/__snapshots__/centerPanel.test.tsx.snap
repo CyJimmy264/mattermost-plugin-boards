@@ -990,13 +990,16 @@ exports[`components/centerPanel return centerPanel and click on card to show car
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label empty "
-            title="Items with an empty name property will go here. This column cannot be removed."
+          <div
+            class="KanbanColumnHeader-title"
           >
-            No name
-          </span>
-          
+            <span
+              class="Label empty "
+              title="Items with an empty name property will go here. This column cannot be removed."
+            >
+              No name
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -1041,17 +1044,31 @@ exports[`components/centerPanel return centerPanel and click on card to show car
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorOrange "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q1"
-              value="Q1"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorOrange "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q1"
+                value="Q1"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -1096,17 +1113,31 @@ exports[`components/centerPanel return centerPanel and click on card to show car
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorBlue "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q2"
-              value="Q2"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorBlue "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q2"
+                value="Q2"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -8875,13 +8906,16 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label empty "
-            title="Items with an empty name property will go here. This column cannot be removed."
+          <div
+            class="KanbanColumnHeader-title"
           >
-            No name
-          </span>
-          
+            <span
+              class="Label empty "
+              title="Items with an empty name property will go here. This column cannot be removed."
+            >
+              No name
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -8926,17 +8960,31 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorOrange "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q1"
-              value="Q1"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorOrange "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q1"
+                value="Q1"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -8981,17 +9029,31 @@ exports[`components/centerPanel should match snapshot for Kanban 1`] = `
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorBlue "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q2"
-              value="Q2"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorBlue "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q2"
+                value="Q2"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -9400,13 +9462,16 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label empty "
-            title="Items with an empty name property will go here. This column cannot be removed."
+          <div
+            class="KanbanColumnHeader-title"
           >
-            No name
-          </span>
-          
+            <span
+              class="Label empty "
+              title="Items with an empty name property will go here. This column cannot be removed."
+            >
+              No name
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -9451,17 +9516,31 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorOrange "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q1"
-              value="Q1"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorOrange "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q1"
+                value="Q1"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >
@@ -9506,17 +9585,31 @@ exports[`components/centerPanel should match snapshot for Kanban, not shared 1`]
           draggable="true"
           style="opacity: 1;"
         >
-          <span
-            class="Label propColorBlue "
+          <button
+            aria-label="Collapse column"
+            class="IconButton KanbanColumnHeader-collapse "
+            title="Collapse column"
+            type="button"
           >
-            <input
-              class="Editable "
-              placeholder="New Select"
-              spellcheck="true"
-              title="Q2"
-              value="Q2"
+            <i
+              class="CompassIcon icon-menu-right"
             />
-          </span>
+          </button>
+          <div
+            class="KanbanColumnHeader-title"
+          >
+            <span
+              class="Label propColorBlue "
+            >
+              <input
+                class="Editable "
+                placeholder="New Select"
+                spellcheck="true"
+                title="Q2"
+                value="Q2"
+              />
+            </span>
+          </div>
           <div
             class="KanbanCalculation"
           >

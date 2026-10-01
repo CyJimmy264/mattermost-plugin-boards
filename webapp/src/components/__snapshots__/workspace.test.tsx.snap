@@ -528,13 +528,16 @@ exports[`src/components/workspace return workspace and showcard 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label empty "
-                title="Items with an empty Property 2 property will go here. This column cannot be removed."
+              <div
+                class="KanbanColumnHeader-title"
               >
-                No Property 2
-              </span>
-              
+                <span
+                  class="Label empty "
+                  title="Items with an empty Property 2 property will go here. This column cannot be removed."
+                >
+                  No Property 2
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -576,17 +579,30 @@ exports[`src/components/workspace return workspace and showcard 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label propColorBlue "
+              <button
+                aria-label="Collapse column"
+                title="Collapse column"
+                type="button"
               >
-                <input
-                  class="Editable "
-                  placeholder="New Select"
-                  spellcheck="true"
-                  title="value 2"
-                  value="value 2"
+                <i
+                  class="CompassIcon icon-menu-right"
                 />
-              </span>
+              </button>
+              <div
+                class="KanbanColumnHeader-title"
+              >
+                <span
+                  class="Label propColorBlue "
+                >
+                  <input
+                    class="Editable "
+                    placeholder="New Select"
+                    spellcheck="true"
+                    title="value 2"
+                    value="value 2"
+                  />
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -945,13 +961,16 @@ exports[`src/components/workspace return workspace readonly and showcard 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label empty "
-                title="Items with an empty Property 2 property will go here. This column cannot be removed."
+              <div
+                class="KanbanColumnHeader-title"
               >
-                No Property 2
-              </span>
-              
+                <span
+                  class="Label empty "
+                  title="Items with an empty Property 2 property will go here. This column cannot be removed."
+                >
+                  No Property 2
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -973,18 +992,31 @@ exports[`src/components/workspace return workspace readonly and showcard 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label propColorBlue "
+              <button
+                aria-label="Collapse column"
+                title="Collapse column"
+                type="button"
               >
-                <input
-                  class="Editable readonly "
-                  placeholder="New Select"
-                  readonly=""
-                  spellcheck="true"
-                  title="value 2"
-                  value="value 2"
+                <i
+                  class="CompassIcon icon-menu-right"
                 />
-              </span>
+              </button>
+              <div
+                class="KanbanColumnHeader-title"
+              >
+                <span
+                  class="Label propColorBlue "
+                >
+                  <input
+                    class="Editable readonly "
+                    placeholder="New Select"
+                    readonly=""
+                    spellcheck="true"
+                    title="value 2"
+                    value="value 2"
+                  />
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -1651,13 +1683,16 @@ exports[`src/components/workspace should match snapshot 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label empty "
-                title="Items with an empty Property 2 property will go here. This column cannot be removed."
+              <div
+                class="KanbanColumnHeader-title"
               >
-                No Property 2
-              </span>
-              
+                <span
+                  class="Label empty "
+                  title="Items with an empty Property 2 property will go here. This column cannot be removed."
+                >
+                  No Property 2
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -1699,17 +1734,30 @@ exports[`src/components/workspace should match snapshot 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label propColorBlue "
+              <button
+                aria-label="Collapse column"
+                title="Collapse column"
+                type="button"
               >
-                <input
-                  class="Editable "
-                  placeholder="New Select"
-                  spellcheck="true"
-                  title="value 2"
-                  value="value 2"
+                <i
+                  class="CompassIcon icon-menu-right"
                 />
-              </span>
+              </button>
+              <div
+                class="KanbanColumnHeader-title"
+              >
+                <span
+                  class="Label propColorBlue "
+                >
+                  <input
+                    class="Editable "
+                    placeholder="New Select"
+                    spellcheck="true"
+                    title="value 2"
+                    value="value 2"
+                  />
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -2068,13 +2116,16 @@ exports[`src/components/workspace should match snapshot with readonly 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label empty "
-                title="Items with an empty Property 2 property will go here. This column cannot be removed."
+              <div
+                class="KanbanColumnHeader-title"
               >
-                No Property 2
-              </span>
-              
+                <span
+                  class="Label empty "
+                  title="Items with an empty Property 2 property will go here. This column cannot be removed."
+                >
+                  No Property 2
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
@@ -2096,18 +2147,31 @@ exports[`src/components/workspace should match snapshot with readonly 1`] = `
               draggable="true"
               style="opacity: 1;"
             >
-              <span
-                class="Label propColorBlue "
+              <button
+                aria-label="Collapse column"
+                title="Collapse column"
+                type="button"
               >
-                <input
-                  class="Editable readonly "
-                  placeholder="New Select"
-                  readonly=""
-                  spellcheck="true"
-                  title="value 2"
-                  value="value 2"
+                <i
+                  class="CompassIcon icon-menu-right"
                 />
-              </span>
+              </button>
+              <div
+                class="KanbanColumnHeader-title"
+              >
+                <span
+                  class="Label propColorBlue "
+                >
+                  <input
+                    class="Editable readonly "
+                    placeholder="New Select"
+                    readonly=""
+                    spellcheck="true"
+                    title="value 2"
+                    value="value 2"
+                  />
+                </span>
+              </div>
               <div
                 class="KanbanCalculation"
               >
